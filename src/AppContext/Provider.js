@@ -13,7 +13,7 @@ const AppProvider = ({ children }) => {
         setUser((currentUser) => ({
             ...currentUser,
             pokedex: {
-                ...currentUser,
+                ...currentUser.pokedex,
                 [pokemon.name]: pokemon
             }
         }))

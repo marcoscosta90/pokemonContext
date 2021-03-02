@@ -9,7 +9,6 @@ import React, {
   
   const PokemonView = () => {
     const { setToPokedex } = useContext(AppContext);
-
     const [pokemon, setPokemon] = useState(null);
     const { name } = useParams();
   

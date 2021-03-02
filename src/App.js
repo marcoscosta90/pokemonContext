@@ -2,6 +2,7 @@ import React from 'react';
 import List from './Pokemon/List/List';
 import View from './Pokemon/View/View';
 import AppProvider from './AppContext/Provider'
+import AppContext from './AppContext/Context'
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,6 +20,12 @@ export default function App() {
         <h1>
           <Link to="/pokemons/list">Brava pokelist</Link>
         </h1>
+        <AppContext.Consumer>
+          {({ user }) => (
+            <p> 
+              {user && user.name} {Object.keys(user.pokedex).length} Pokemons</p>
+          )}
+        </AppContext.Consumer>
         <Switch>
           <Route path="/pokemons/list" component={List} />
           <Route path="/pokemons/:name" component={View} />
